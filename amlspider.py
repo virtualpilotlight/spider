@@ -7,7 +7,7 @@ soup = BeautifulSoup(req.text, "html.parser")
 
 print(soup)
 
-
+# fix this class
 class Soup_can:
 	def __init__(self, link_name, souped):
 		self.link_name = link_name
@@ -40,7 +40,7 @@ def get_links(soup):
 		else:
 			counter += 1
 			new_counter = counter 
-			urls.update({new_counter: {"link name": new_url, "souped": False}})
+			urls.update({new_counter: {link_name: new_url, souped: False}})
 
 get_links(soup)
 print(urls)
@@ -73,17 +73,3 @@ print(type(new_dict))
 # 441 total links, 15 initial
 print(new_dict)
 
-	
-
-
-"""
-if '.mp3' in val:
-			# v2 did not work, this is a good place to start with the saving the files to disk
-			print(f"Downloading File {name}")
-			            download = req.get(href)
-			            if download.status_code == 200:
-			                with open(name, 'wb') as f:
-			                    f.write(download.content)
-			            else:
-			                print(f"Download Failed For File {name}")
-"""
