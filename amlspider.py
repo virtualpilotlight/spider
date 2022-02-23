@@ -21,8 +21,8 @@ counter = 0
 
 urls = {
 	0: {
-		"link name": url, 
-		"souped": False
+		link_name: url, 
+		souped: False
 	}
 }
 
@@ -45,7 +45,11 @@ def get_links(soup):
 get_links(soup)
 print(urls)
 
-urls.update({0: {"link name": url, "souped": True}})
+urls.update({0: {link_name: url, souped: True}})
+
+for x in urls:
+	print(urls[x])
+	print(type(x))
 
 url_list = set(dict.values(urls))
 print(url_list)
