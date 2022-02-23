@@ -1,22 +1,3 @@
-# I want a spider that finds the links keeps them and saves any files it finds in along the path
-
-"""
-Initial soup # this is a html scrape of the page
-Initial link scrape # takes a soup and makes a list_of_links 
-# mast list of all links as a CSV
-
-List of links
-For each link in list of links
-   Soup
-   Scrape 
-
-Something with cashing 
-
-If link contains allmylove.org/audio/*.*
-   Download
-Else add link to list of links
-"""
-
 from bs4 import BeautifulSoup
 import requests
 
@@ -26,7 +7,6 @@ soup = BeautifulSoup(req.text, "html.parser")
 
 print(soup)
 
-counter = 0
 
 class Soup_can:
 	def __init__(self, link_name, souped):
@@ -37,15 +17,14 @@ can = Soup_can(url, false)
 print(can)
 print(type(can))
 
+counter = 0
+
 urls = {
 	0: {
-		link_name: url, 
-		souped: false
+		"link name": url, 
+		"souped": False
 	}
 }
-
-
-# urls = {counter: url}
 
 def get_links(soup):
 	global counter
@@ -61,14 +40,15 @@ def get_links(soup):
 		else:
 			counter += 1
 			new_counter = counter 
-			urls.[new_counter]{link_name: new_url, souped: False}
-	return urls
+			urls.update({new_counter: {"link name": new_url, "souped": False}})
 
 get_links(soup)
 print(urls)
-urls.pop(0)
-print(urls)
+
+urls.update({0: {"link name": url, "souped": True}})
+
 url_list = set(dict.values(urls))
+print(url_list)
 print(type(url_list))
 
 def soup_it(url_list):
@@ -89,11 +69,6 @@ print(type(new_dict))
 # 441 total links, 15 initial
 print(new_dict)
 
-for x in new_dict.keys():
-	print(x)
-
-i = 1
-while i < 15 
 	
 
 
