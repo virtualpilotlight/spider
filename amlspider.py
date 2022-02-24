@@ -7,15 +7,8 @@ soup = BeautifulSoup(req.text, "html.parser")
 
 print(soup)
 
-# fix this class
-class Soup_can:
-	def __init__(self, link_name, souped):
-		self.link_name = link_name
-		self.souped = souped
+# fix this classS
 
-can = Soup_can(url, false) 
-print(can)
-print(type(can))
 
 counter = 0
 
